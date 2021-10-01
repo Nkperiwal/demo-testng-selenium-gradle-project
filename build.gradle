@@ -1,0 +1,30 @@
+apply plugin: 'groovy'
+repositories {
+    mavenCentral()
+}
+
+defaultTasks 'testChrome'
+
+dependencies { 
+ 	implementation 'org.testng:testng:6.9.10'
+    implementation 'io.github.bonigarcia:webdrivermanager:4.2.2'
+    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:3.141.59'
+}
+
+test {
+    // enable TestNG support (default is JUnit)
+    useTestNG()
+
+    //Show full exception on failure
+    testLogging {
+        exceptionFormat = 'full'
+    }
+
+    //Convenience .. pipe all test results to SDOUT
+    afterTest { desc, result ->
+        println "${desc.className} ${desc.name} ${result.resultType}"
+    }
+
+    //Force tests to always run, even if they haven't been updated
+    outputs.upToDateWhen { false }
+}
