@@ -2,9 +2,10 @@
 
 ## Quick Start
 
-1. Clone the project using `git clone https://github.com/Nkperiwal/demo-testng-selenium-gradle-project`
-2. Ensure current JDK is installed (nothing else is required -- other dependencies will automatically download )
-3. To run tests with Chrome run: ./gradlew :test --tests "SeleniumExampleTest.browserInitTest" -i
+1. Ensure current JDK is installed (nothing else is required -- other dependencies will automatically download )
+2. Clone the project using `git clone https://github.com/Nkperiwal/demo-testng-selenium-gradle-project`
+3. Provide execute permission to gradlew sript using `chmod +x gradlew`
+4. To run tests with Chrome run: `./gradlew :test --tests "SeleniumExampleTest.browserInitTest" -i`
 
 ## Notes
 
